@@ -1,0 +1,27 @@
+body.theme-light {
+  background-color: $color-bg-light;
+  color: $color-text-light;
+
+  a {
+    color: $color-link-light;
+  }
+
+  article {
+    background-color: lighten($color-bg-light, 10%);
+  }
+}
+
+body.theme-dark {
+  background-color: $color-bg-dark;
+  color: $color-text-dark;
+
+  a {
+    color: $color-link-dark;
+  }
+
+  article {
+    background-color: lighten($color-bg-dark, 10%);
+  }
+}
+
+  

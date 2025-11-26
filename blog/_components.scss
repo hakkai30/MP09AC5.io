@@ -1,0 +1,12 @@
+button#theme-switch {
+  background: $color-link-light;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    background: darken($color-link-light, 10%);
+  }
+}
