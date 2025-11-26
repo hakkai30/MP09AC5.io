@@ -1,0 +1,158 @@
+/* --- Variables de Tema (Reafirmación) --- */
+:root {
+    --color-background: #ffffff;
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #5f5f5f;
+    --color-accent: #388e3c;
+    --color-border: #e0e0e0;
+}
+
+:root body.theme-dark {
+    --color-background: #121212;
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #aaaaaa;
+    --color-accent: #66bb6a;
+    --color-border: #333333;
+}
+
+/* --- Estilos Base --- */
+body {
+    font-family: Georgia, serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    background-image: url('https://assetsio.gnwcdn.com/rockstar-games-logo-gta.jpg?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp');
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center center;
+}
+
+body.theme-light {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+body.theme-dark {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+/* --- Cabecera (Header) --- */
+header {
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: var(--color-text-primary);
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header nav a:hover {
+    color: var(--color-accent);
+}
+
+#theme-switch {
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    background-color: transparent;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#theme-switch:hover {
+    background-color: var(--color-border);
+}
+
+/* --- Contenido Principal (Main y Article) --- */
+main {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    background-color: var(--color-background); 
+    
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+article {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 20px;
+
+    padding: 20px;
+}
+
+article h2 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--color-text-primary);
+    font-family: Arial, sans-serif;
+}
+
+article time {
+    display: block;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 30px;
+}
+
+.Parrafo1, .Parrafo2, .Parrafo3, .Parrafo4, .Parrafo5 {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.Parrafo3 {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    padding: 15px;
+    border: 1px dashed var(--color-border);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+br {
+    display: none;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--color-background);
+    color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}

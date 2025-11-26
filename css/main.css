@@ -1,81 +1,223 @@
-@charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+    --color-background: #ffffff;
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #5f5f5f;
+    --color-accent: #388e3c;
+    --color-border: #e0e0e0;
+}
+
+:root body.theme-dark {
+    --color-background: #2a2727;
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #aaaaaa;
+    --color-accent: #66bb6a;
+    --color-border: #333333;
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f0f0f0;
-  color: #222;
-  line-height: 1.5;
-}
-
-a {
-  color: #0055cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-header, footer {
-  background-color: rgb(214.5, 214.5, 214.5);
-  padding: 1rem;
-  text-align: center;
-}
-
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-section[aria-label="Listado de artículos"] {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-article {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-button#theme-switch {
-  background: #0055cc;
-  border: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-button#theme-switch:hover {
-  background: rgb(0, 63.75, 153);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body.theme-light {
-  background-color: #f0f0f0;
-  color: #222;
-}
-body.theme-light a {
-  color: #0055cc;
-}
-body.theme-light article {
-  background-color: white;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    background-image: url('https://i.extremetech.com/imagery/content-types/02WeaPQ6HY1s4RWkKK4xXKh/hero-image.fit_lim.v1678673236.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 body.theme-dark {
-  background-color: #222;
-  color: #eee;
+    color: var(--color-text-primary);
+    background-image: url('https://i.extremetech.com/imagery/content-types/02WeaPQ6HY1s4RWkKK4xXKh/hero-image.fit_lim.v1678673236.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
-body.theme-dark a {
-  color: #66aaff;
+
+#theme-switch {
+    padding: 8px 12px;
+    border: 1px solid var(--color-accent);
+    background-color: transparent;
+    color: var(--color-accent);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
-body.theme-dark article {
-  background-color: rgb(59.5, 59.5, 59.5);
-}/*# sourceMappingURL=main.css.map */
+
+#theme-switch:hover {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border-color: var(--color-accent);
+}
+
+#theme-switch:active {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border-color: var(--color-accent);
+    transform: translateY(1px);
+    opacity: 0.9;
+}
+
+.article-summary {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+}
+
+header {
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-search input[type="search"] {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.main-content-articles {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: var(--color-background);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+section[aria-label="Listado de artículos"]::before {
+    content: "LO ÚLTIMO";
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+    padding: 20px;
+    background-color: var(--color-background);
+}
+
+.article-summary {
+    display: flex;
+    gap: 20px;
+    border: 1px solid var(--color-border);
+    padding: 20px;
+    background-color: var(--color-background);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.text-article-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-article-right h2 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.text-article-right h2 a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.text-article-right .text-article-span {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    order: -1;
+}
+
+.text-article-right time {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-top: 10px;
+}
+
+.text-article-left {
+    flex: 1;
+    min-width: 150px;
+}
+
+.text-article-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.header-content-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content-logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+.header-content-nav {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.nav-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    background-color: var(--color-background);
+    color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
