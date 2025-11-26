@@ -1,0 +1,81 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  color: #222;
+  line-height: 1.5;
+}
+
+a {
+  color: #0055cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+header, footer {
+  background-color: rgb(214.5, 214.5, 214.5);
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+section[aria-label="Listado de artículos"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+article {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+button#theme-switch {
+  background: #0055cc;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button#theme-switch:hover {
+  background: rgb(0, 63.75, 153);
+}
+
+body.theme-light {
+  background-color: #f0f0f0;
+  color: #222;
+}
+body.theme-light a {
+  color: #0055cc;
+}
+body.theme-light article {
+  background-color: white;
+}
+
+body.theme-dark {
+  background-color: #222;
+  color: #eee;
+}
+body.theme-dark a {
+  color: #66aaff;
+}
+body.theme-dark article {
+  background-color: rgb(59.5, 59.5, 59.5);
+}/*# sourceMappingURL=main.css.map */
